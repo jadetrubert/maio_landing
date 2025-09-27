@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #EADBC8;
+      color: #4B2E2E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+
+    .logo-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 0 auto 20px;
+      box-shadow: 0 5px 15px rgba(75, 46, 46, 0.1);
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      max-width: 200px;
+      /* Tamanho reduzido da logo */
+      height: auto;
+    }
+
+    .logo-subtitle {
+      font-size: 18px;
+      color: #8C7B6B;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    h1 {
+      color: #4B2E2E;
+      margin-bottom: 10px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .description {
+      color: #8C7B6B;
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .link-item {
+      background-color: white;
+      color: #4B2E2E;
+      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(75, 46, 46, 0.1);
+      border: 2px solid transparent;
+      font-weight: 600;
+    }
+
+    .link-item:hover,
+    .link-item:active {
+      background-color: #4B2E2E;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(75, 46, 46, 0.15);
+      border-color: white;
+    }
+
+    .link-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .link-icon {
+      font-size: 20px;
+    }
+
+    .info-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(75, 46, 46, 0.1);
+      margin-top: 20px;
+      border-left: 4px solid #4B2E2E;
+    }
+
+    .info-title {
+      color: #4B2E2E;
+      margin-bottom: 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .info-content {
+      color: #8C7B6B;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #8C7B6B;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 10px;
+      }
+
+      .logo-container {
+        padding: 15px;
+      }
+
+      .logo {
+        max-width: 160px;
+        /* Logo ainda menor no mobile */
+      }
+
+      .logo-subtitle {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .link-item {
+        padding: 12px 15px;
+        font-size: 14px;
+      }
+
+      .description,
+      .info-content {
+        font-size: 14px;
+      }
+
+      .info-title {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .logo {
+        max-width: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="profile">
+      <div class="logo-container">
+        <!-- Logo com tamanho ajustado -->
+        <img src="logo.png" alt="MAIO Marketing" class="logo">
+      </div>
+      <h1>MAIO Marketing</h1>
+      <p class="description">Soluções criativas em comunicação e marketing digital para impulsionar seu negócio</p>
+    </div>
+
+    <div class="links">
+      <a href="https://wa.me/5511958670011?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20de%20marketing." class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fab fa-whatsapp link-icon"></i>
+          WhatsApp
+        </div>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+
+      <a href="mailto:comunicacaobe.maio@gmail.com" class="link-item" target="_blank">
+        <div class="link-text">
+          <i class="fas fa-envelope link-icon"></i>
+          E-mail
+        </div>
+        <i class="fas fa-chevron-right link-arrow"></i>
+      </a>
+    </div>
+
+    <div class="info-box">
+      <h3 class="info-title">
+        <i class="fas fa-rocket"></i>
+        Nossos Serviços
+      </h3>
+      <p class="info-content">
+        • Gestão de Redes Sociais<br>
+        • Criação de Conteúdo<br>
+        • Identidade Visual<br>
+        • Estratégias de Marketing Digital
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 MAIO Marketing. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
