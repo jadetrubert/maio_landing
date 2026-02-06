@@ -43,10 +43,10 @@
       display: block;
     }
 
-    /* WRAP do Vector (pra cortar nas bordas) */
+    /* VECTOR (desktop/tablet normal) */
     .vector-wrap {
       width: 100%;
-      overflow: hidden; /* ESSENCIAL: é isso que faz "sair" nas bordas */
+      overflow: hidden;
       margin: 10px 0 28px;
     }
 
@@ -63,6 +63,7 @@
       margin-bottom: 34px;
     }
 
+    /* BOTÕES */
     .buttons {
       width: 100%;
       display: flex;
@@ -91,6 +92,7 @@
       border-color: #000;
     }
 
+    /* SERVIÇOS (desktop/tablet) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -108,43 +110,50 @@
       background: #fff;
     }
 
-    /* ===== MOBILE ONLY ===== */
+    /* ===== MOBILE ONLY (corrigido: full-bleed e sem mostrar as duas bordas do vector) ===== */
     @media (max-width: 480px) {
-      body { padding: 18px; }
+      body {
+        padding: 18px;
+        overflow-x: hidden;
+      }
 
       .logo {
         margin-top: 44px;
         width: 180px;
       }
 
-      /* Vector saindo nas bordas (esquerda e direita) */
+      /* Vector full-bleed REAL (ignora padding) */
       .vector-wrap {
-        width: 100%;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
         overflow: hidden;
-        margin: 12px 0 28px;
+        margin-top: 12px;
+        margin-bottom: 28px;
       }
 
       .vector {
-        width: 160%;              /* maior que a tela */
-        max-width: none;          /* não limitar */
+        width: 220vw;               /* aumenta pra não aparecer ponta */
+        max-width: none;
         display: block;
-        transform: translateX(-30%); /* centraliza o "vazamento":  (160-100)/2 = 30% */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
-      /* Services saindo pela esquerda */
+      /* Services full-bleed + saindo pela esquerda */
       .services-wrap {
-        margin-top: 26px;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        display: flex;
         justify-content: flex-start;
+        margin-top: 26px;
       }
 
       .services {
         width: 86%;
         padding: 16px 18px;
-        transform: translateX(-18px);
+        transform: translateX(-28px);
       }
-
-      /* Se quiser menos espaço entre Email e Services no mobile, mexe aqui */
-      /* .buttons { margin-bottom: 22px; } */
     }
   </style>
 </head>
@@ -154,7 +163,6 @@
 
     <img class="logo" src="logo.png" alt="MAIO" />
 
-    <!-- Vector 1 com wrap pra cortar nas bordas -->
     <div class="vector-wrap">
       <img class="vector" src="Vector 1.png" alt="Linha decorativa" />
     </div>
