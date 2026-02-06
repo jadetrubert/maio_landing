@@ -24,6 +24,7 @@
       display: flex;
       justify-content: center;
       padding: 24px;
+      overflow-x: hidden; /* evita "puxar" a tela no mobile */
     }
 
     .container {
@@ -86,7 +87,7 @@
       border-color: #000;
     }
 
-    /* SERVIÇOS (padrão desktop/tablet: dentro da tela) */
+    /* SERVIÇOS (desktop/tablet) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -101,33 +102,37 @@
       font-size: 13px;
       font-weight: 300;
       line-height: 1.6;
+      background: #fff;
     }
 
-    @media (max-width: 380px) {
-      .logo { width: 190px; }
-      .services { width: 85%; }
-    }
-
-    /* ===== MOBILE ONLY (alterações visuais pedidas) ===== */
+    /* ===== MOBILE ONLY ===== */
     @media (max-width: 480px) {
-
-      /* Linha "saindo" pelos dois lados */
-      .vector {
-        width: 140%;
-        margin-left: -20%;
-        margin-right: -20%;
+      body {
+        padding: 18px; /* padding menor pra não bagunçar as "saídas" */
       }
 
-      /* Card de serviços "saindo da tela" à esquerda */
+      .logo {
+        margin-top: 44px;
+        width: 180px;
+      }
+
+      /* Linha saindo pros dois lados sem quebrar alinhamento */
+      .vector {
+        width: 140%;
+        margin: 10px 0 28px;
+        transform: translateX(-20%); /* equivalente ao -20%, mas estável */
+      }
+
+      /* Card "saindo" à esquerda, consistente em qualquer largura */
       .services-wrap {
-        justify-content: flex-start;
         margin-top: 26px;
+        justify-content: flex-start;
       }
 
       .services {
-        width: 85%;
-        margin-left: -24px;
+        width: 86%;
         padding: 16px 18px;
+        transform: translateX(-18px); /* sai um pouco pela esquerda */
       }
     }
   </style>
@@ -135,11 +140,7 @@
 
 <body>
   <div class="container">
-
-    <!-- LOGO (imagem) -->
     <img class="logo" src="logo.png" alt="MAIO" />
-
-    <!-- LINHA (Vector 1) -->
     <img class="vector" src="Vector 1.png" alt="Linha decorativa" />
 
     <p class="subtitle">o time criativo que sua marca precisa</p>
@@ -172,7 +173,6 @@
         Produção audiovisual
       </div>
     </div>
-
   </div>
 </body>
 </html>
