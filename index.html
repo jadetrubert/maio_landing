@@ -35,6 +35,7 @@
       align-items: center;
     }
 
+    /* LOGO */
     .logo {
       margin-top: 52px;
       width: 190px;
@@ -42,11 +43,12 @@
       display: block;
     }
 
-    /* VECTOR (desktop/tablet) */
+    /* VECTOR (desktop normal) */
     .vector-wrap {
       width: 100%;
       margin: 10px 0 28px;
     }
+
     .vector {
       width: 100%;
       height: auto;
@@ -60,6 +62,7 @@
       margin-bottom: 34px;
     }
 
+    /* BOTÕES */
     .buttons {
       width: 100%;
       display: flex;
@@ -88,6 +91,7 @@
       border-color: #000;
     }
 
+    /* SERVIÇOS (desktop/tablet) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -105,7 +109,7 @@
       background: #fff;
     }
 
-    /* ===== MOBILE ONLY (igual ao seu print 1) ===== */
+    /* ===== MOBILE ONLY ===== */
     @media (max-width: 480px) {
       body { padding: 18px; }
 
@@ -114,30 +118,31 @@
         width: 180px;
       }
 
-      /* Vector: vaza pros dois lados, mantendo o "miolo" (loop) no centro */
+      /* VECTOR: fica no meio e vaza pros lados (sem distorcer) */
       .vector-wrap {
         width: 100vw;
-        margin-left: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw); /* full-bleed real */
         overflow: hidden;
         margin-top: 12px;
         margin-bottom: 28px;
-        height: 78px; /* altura parecida com sua imagem desejada */
       }
 
       .vector {
-        width: 200%;
-        height: 78px;
+        width: 170%;
         max-width: none;
         display: block;
-        object-fit: cover;            /* recorta sem distorcer */
-        object-position: 50% 50%;     /* centro de verdade (loop no meio) */
+        margin: 0 auto; /* centraliza */
       }
 
-      /* Services: “saindo” levemente pela esquerda, sem cortar metade */
+      /* CARD: “saindo” pela esquerda e SEM BORDA ESQUERDA visível */
       .services {
         width: 86%;
-        margin-left: -14px; /* ajuste fino: -10 a -18 */
         padding: 16px 18px;
+
+        transform: translateX(-14px); /* sai um pouco pra fora */
+        border-left: none;            /* borda esquerda NÃO aparece */
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
   </style>
