@@ -39,20 +39,21 @@
     .logo {
       margin-top: 52px;
       width: 190px;
-      height: auto;
       display: block;
     }
 
-    /* VECTOR (desktop normal) */
+    /* VECTOR */
     .vector-wrap {
-      width: 100%;
-      margin: 10px 0 28px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      margin: 14px 0 28px;
     }
 
     .vector {
-      width: 100%;
-      height: auto;
+      width: 180%;
       display: block;
+      margin-left: -40%; /* <<< ISSO É O SEGREDO */
     }
 
     .subtitle {
@@ -82,74 +83,33 @@
       font-size: 14px;
       font-weight: 400;
       border-radius: 2px;
-      transition: 0.2s ease;
     }
 
-    .btn:hover {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
-
-    /* SERVIÇOS (desktop/tablet) */
+    /* SERVIÇOS */
     .services-wrap {
       width: 100%;
       display: flex;
       justify-content: flex-start;
-      margin-top: 25px;
+      margin-top: 26px;
     }
 
     .services {
-      width: 78%;
+      width: 86%;
       border: 1px solid #e6e6e6;
-      padding: 14px 16px;
+      border-left: none;              /* <<< some a borda esquerda */
+      padding: 16px 18px;
       font-size: 13px;
       font-weight: 300;
       line-height: 1.6;
       background: #fff;
-    }
-
-    /* ===== MOBILE ONLY ===== */
-    @media (max-width: 480px) {
-      body { padding: 18px; }
-
-      .logo {
-        margin-top: 44px;
-        width: 180px;
-      }
-
-      /* VECTOR: fica no meio e vaza pros lados (sem distorcer) */
-      .vector-wrap {
-        width: 100vw;
-        margin-left: calc(50% - 50vw); /* full-bleed real */
-        overflow: hidden;
-        margin-top: 12px;
-        margin-bottom: 28px;
-      }
-
-      .vector {
-        width: 170%;
-        max-width: none;
-        display: block;
-        margin: 0 auto; /* centraliza */
-      }
-
-      /* CARD: “saindo” pela esquerda e SEM BORDA ESQUERDA visível */
-      .services {
-        width: 86%;
-        padding: 16px 18px;
-
-        transform: translateX(-14px); /* sai um pouco pra fora */
-        border-left: none;            /* borda esquerda NÃO aparece */
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
+      transform: translateX(-14px);   /* <<< sai levemente da tela */
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+
     <img class="logo" src="logo.png" alt="MAIO" />
 
     <div class="vector-wrap">
@@ -159,23 +119,8 @@
     <p class="subtitle">o time criativo que sua marca precisa</p>
 
     <div class="buttons">
-      <a
-        class="btn"
-        href="https://wa.me/5511994628048?text=Olá,%20gostaria%20de%20mais%20informações."
-        target="_blank"
-        rel="noreferrer"
-      >
-        WhatsApp
-      </a>
-
-      <a
-        class="btn"
-        href="mailto:comunicacaobe.maio@gmail.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Email
-      </a>
+      <a class="btn" href="https://wa.me/5511994628048" target="_blank">WhatsApp</a>
+      <a class="btn" href="mailto:comunicacaobe.maio@gmail.com">Email</a>
     </div>
 
     <div class="services-wrap">
@@ -186,6 +131,7 @@
         Produção audiovisual
       </div>
     </div>
+
   </div>
 </body>
 </html>
