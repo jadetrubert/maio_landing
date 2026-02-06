@@ -24,7 +24,7 @@
       display: flex;
       justify-content: center;
       padding: 24px;
-      overflow-x: hidden;
+      overflow-x: hidden; /* evita scroll lateral */
     }
 
     .container {
@@ -46,7 +46,6 @@
     /* VECTOR (desktop/tablet normal) */
     .vector-wrap {
       width: 100%;
-      overflow: hidden;
       margin: 10px 0 28px;
     }
 
@@ -110,11 +109,10 @@
       background: #fff;
     }
 
-    /* ===== MOBILE ONLY (corrigido: full-bleed e sem mostrar as duas bordas do vector) ===== */
+    /* ===== MOBILE ONLY ===== */
     @media (max-width: 480px) {
       body {
         padding: 18px;
-        overflow-x: hidden;
       }
 
       .logo {
@@ -122,37 +120,38 @@
         width: 180px;
       }
 
-      /* Vector full-bleed REAL (ignora padding) */
+      /* Vector vazando nas bordas sem ficar gigante */
       .vector-wrap {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         overflow: hidden;
         margin-top: 12px;
         margin-bottom: 28px;
+        height: 95px; /* controla a altura */
       }
 
       .vector {
-        width: 220vw;               /* aumenta pra não aparecer ponta */
+        width: 170vw;          /* vaza pros dois lados */
+        height: 95px;
         max-width: none;
         display: block;
+        object-fit: cover;
+        object-position: 50% 60%;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
       }
 
-      /* Services full-bleed + saindo pela esquerda */
+      /* Services "saindo" pela esquerda, mas SEM cortar metade */
       .services-wrap {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        display: flex;
-        justify-content: flex-start;
         margin-top: 26px;
+        justify-content: flex-start;
       }
 
       .services {
-        width: 86%;
+        width: 92%;            /* maior no mobile */
+        margin-left: -12px;    /* sai um pouco pela esquerda (ajuste aqui) */
         padding: 16px 18px;
-        transform: translateX(-28px);
       }
     }
   </style>
@@ -160,7 +159,6 @@
 
 <body>
   <div class="container">
-
     <img class="logo" src="logo.png" alt="MAIO" />
 
     <div class="vector-wrap">
@@ -197,7 +195,6 @@
         Produção audiovisual
       </div>
     </div>
-
   </div>
 </body>
 </html>
