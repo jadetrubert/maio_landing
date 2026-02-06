@@ -37,7 +37,7 @@
     /* LOGO (imagem) */
     .logo {
       margin-top: 52px;
-      width: 210px; /* ajuste fino se precisar */
+      width: 210px;
       height: auto;
       display: block;
     }
@@ -47,6 +47,7 @@
       width: 100%;
       margin: 10px 0 28px;
       display: block;
+      height: auto;
     }
 
     .subtitle {
@@ -75,7 +76,7 @@
       color: #000;
       font-size: 14px;
       font-weight: 400;
-      border-radius: 2px; /* bem quadradinho igual ao print */
+      border-radius: 2px;
       transition: 0.2s ease;
     }
 
@@ -85,7 +86,7 @@
       border-color: #000;
     }
 
-    /* SERVIÇOS (caixa discreta no canto inferior esquerdo) */
+    /* SERVIÇOS (padrão desktop/tablet: dentro da tela) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -106,6 +107,29 @@
       .logo { width: 190px; }
       .services { width: 85%; }
     }
+
+    /* ===== MOBILE ONLY (alterações visuais pedidas) ===== */
+    @media (max-width: 480px) {
+
+      /* Linha "saindo" pelos dois lados */
+      .vector {
+        width: 140%;
+        margin-left: -20%;
+        margin-right: -20%;
+      }
+
+      /* Card de serviços "saindo da tela" à esquerda */
+      .services-wrap {
+        justify-content: flex-start;
+        margin-top: 48px;
+      }
+
+      .services {
+        width: 85%;
+        margin-left: -24px;
+        padding: 16px 18px;
+      }
+    }
   </style>
 </head>
 
@@ -123,7 +147,7 @@
     <div class="buttons">
       <a
         class="btn"
-        href="https://wa.me/5511958670011?text=Olá,%20gostaria%20de%20mais%20informações."
+        href="https://wa.me/5511994628048?text=Olá,%20gostaria%20de%20mais%20informações."
         target="_blank"
         rel="noreferrer"
       >
