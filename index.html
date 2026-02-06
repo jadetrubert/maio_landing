@@ -24,7 +24,7 @@
       display: flex;
       justify-content: center;
       padding: 24px;
-      overflow-x: hidden; /* evita scroll lateral */
+      overflow-x: hidden;
     }
 
     .container {
@@ -35,7 +35,6 @@
       align-items: center;
     }
 
-    /* LOGO */
     .logo {
       margin-top: 52px;
       width: 190px;
@@ -43,12 +42,11 @@
       display: block;
     }
 
-    /* VECTOR (desktop/tablet normal) */
+    /* VECTOR (desktop/tablet) */
     .vector-wrap {
       width: 100%;
       margin: 10px 0 28px;
     }
-
     .vector {
       width: 100%;
       height: auto;
@@ -62,7 +60,6 @@
       margin-bottom: 34px;
     }
 
-    /* BOTÕES */
     .buttons {
       width: 100%;
       display: flex;
@@ -91,7 +88,6 @@
       border-color: #000;
     }
 
-    /* SERVIÇOS (desktop/tablet) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -109,48 +105,38 @@
       background: #fff;
     }
 
-    /* ===== MOBILE ONLY ===== */
+    /* ===== MOBILE ONLY (igual ao seu print 1) ===== */
     @media (max-width: 480px) {
-      body {
-        padding: 18px;
-      }
+      body { padding: 18px; }
 
       .logo {
         margin-top: 44px;
         width: 180px;
       }
 
-      /* Vector vazando nas bordas sem ficar gigante */
+      /* Vector: vaza pros dois lados, mantendo o "miolo" (loop) no centro */
       .vector-wrap {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         overflow: hidden;
         margin-top: 12px;
         margin-bottom: 28px;
-        height: 95px; /* controla a altura */
+        height: 78px; /* altura parecida com sua imagem desejada */
       }
 
       .vector {
-        width: 170vw;          /* vaza pros dois lados */
-        height: 95px;
+        width: 200%;
+        height: 78px;
         max-width: none;
         display: block;
-        object-fit: cover;
-        object-position: 50% 60%;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        object-fit: cover;            /* recorta sem distorcer */
+        object-position: 50% 50%;     /* centro de verdade (loop no meio) */
       }
 
-      /* Services "saindo" pela esquerda, mas SEM cortar metade */
-      .services-wrap {
-        margin-top: 26px;
-        justify-content: flex-start;
-      }
-
+      /* Services: “saindo” levemente pela esquerda, sem cortar metade */
       .services {
-        width: 92%;            /* maior no mobile */
-        margin-left: -12px;    /* sai um pouco pela esquerda (ajuste aqui) */
+        width: 86%;
+        margin-left: -14px; /* ajuste fino: -10 a -18 */
         padding: 16px 18px;
       }
     }
