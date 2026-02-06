@@ -24,7 +24,7 @@
       display: flex;
       justify-content: center;
       padding: 24px;
-      overflow-x: hidden; /* evita "puxar" a tela no mobile */
+      overflow-x: hidden;
     }
 
     .container {
@@ -35,7 +35,7 @@
       align-items: center;
     }
 
-    /* LOGO (imagem) */
+    /* LOGO */
     .logo {
       margin-top: 52px;
       width: 190px;
@@ -43,18 +43,18 @@
       display: block;
     }
 
-    /* LINHA */
-    @media (max-width: 480px) {
-  .vector {
-    width: 160%;
-    max-width: none;
-    display: block;
-    margin: 12px 0 28px;
-    transform: translateX(-30%);
-    object-fit: contain;
-  }
-}
+    /* WRAP do Vector (pra cortar nas bordas) */
+    .vector-wrap {
+      width: 100%;
+      overflow: hidden; /* ESSENCIAL: é isso que faz "sair" nas bordas */
+      margin: 10px 0 28px;
+    }
 
+    .vector {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     .subtitle {
       font-size: 14px;
@@ -63,7 +63,6 @@
       margin-bottom: 34px;
     }
 
-    /* BOTÕES */
     .buttons {
       width: 100%;
       display: flex;
@@ -92,7 +91,6 @@
       border-color: #000;
     }
 
-    /* SERVIÇOS (desktop/tablet) */
     .services-wrap {
       width: 100%;
       display: flex;
@@ -112,23 +110,28 @@
 
     /* ===== MOBILE ONLY ===== */
     @media (max-width: 480px) {
-      body {
-        padding: 18px; /* padding menor pra não bagunçar as "saídas" */
-      }
+      body { padding: 18px; }
 
       .logo {
         margin-top: 44px;
         width: 180px;
       }
 
-      /* Linha saindo pros dois lados sem quebrar alinhamento */
-      .vector {
-        width: 140%;
-        margin: 10px 0 28px;
-        transform: translateX(-20%); /* equivalente ao -20%, mas estável */
+      /* Vector saindo nas bordas (esquerda e direita) */
+      .vector-wrap {
+        width: 100%;
+        overflow: hidden;
+        margin: 12px 0 28px;
       }
 
-      /* Card "saindo" à esquerda, consistente em qualquer largura */
+      .vector {
+        width: 160%;              /* maior que a tela */
+        max-width: none;          /* não limitar */
+        display: block;
+        transform: translateX(-30%); /* centraliza o "vazamento":  (160-100)/2 = 30% */
+      }
+
+      /* Services saindo pela esquerda */
       .services-wrap {
         margin-top: 26px;
         justify-content: flex-start;
@@ -137,16 +140,24 @@
       .services {
         width: 86%;
         padding: 16px 18px;
-        transform: translateX(-18px); /* sai um pouco pela esquerda */
+        transform: translateX(-18px);
       }
+
+      /* Se quiser menos espaço entre Email e Services no mobile, mexe aqui */
+      /* .buttons { margin-bottom: 22px; } */
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+
     <img class="logo" src="logo.png" alt="MAIO" />
-    <img class="vector" src="Vector 1.png" alt="Linha decorativa" />
+
+    <!-- Vector 1 com wrap pra cortar nas bordas -->
+    <div class="vector-wrap">
+      <img class="vector" src="Vector 1.png" alt="Linha decorativa" />
+    </div>
 
     <p class="subtitle">o time criativo que sua marca precisa</p>
 
@@ -178,6 +189,7 @@
         Produção audiovisual
       </div>
     </div>
+
   </div>
 </body>
 </html>
